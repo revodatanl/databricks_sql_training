@@ -43,7 +43,9 @@ ON c.c_custkey = o.o_custkey;
 
 -- COMMAND ----------
 
-
+SELECT c.c_name AS customer_name, n.n_name AS nation_name
+FROM samples.tpch.customer c
+INNER JOIN samples.tpch.nation n ON c.c_nationkey = n.n_nationkey;
 
 -- COMMAND ----------
 
@@ -78,7 +80,9 @@ ON c.c_custkey = o.o_custkey;
 
 -- COMMAND ----------
 
-
+SELECT c.*, o.*
+FROM samples.tpch.customer c
+LEFT JOIN samples.tpch.orders o ON c.c_custkey = o.o_custkey;
 
 -- COMMAND ----------
 
@@ -113,7 +117,9 @@ ON c.c_custkey = o.o_custkey;
 
 -- COMMAND ----------
 
-
+SELECT o.*, c.*
+FROM samples.tpch.orders o
+RIGHT JOIN samples.tpch.customer c ON o.o_custkey = c.c_custkey;
 
 -- COMMAND ----------
 
@@ -148,7 +154,9 @@ ON c.c_custkey = o.o_custkey;
 
 -- COMMAND ----------
 
-
+SELECT c.*, o.*
+FROM samples.tpch.customer c
+FULL OUTER JOIN samples.tpch.orders o ON c.c_custkey = o.o_custkey;
 
 -- COMMAND ----------
 

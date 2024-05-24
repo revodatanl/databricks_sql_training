@@ -45,9 +45,7 @@ WHERE c_custkey IN (SELECT o_custkey FROM samples.tpch.orders WHERE o_totalprice
 
 -- COMMAND ----------
 
-SELECT p_name
-FROM samples.tpch.part
-WHERE p_partkey IN (SELECT ps_partkey FROM samples.tpch.partsupp WHERE ps_supplycost > 100);
+
 
 -- COMMAND ----------
 
@@ -131,15 +129,6 @@ ON c.c_custkey = co.o_custkey;
 -- COMMAND ----------
 
 
-WITH CustomerTotalPrice AS (
-    SELECT o_custkey, SUM(o_totalprice) AS total_price
-    FROM samples.tpch.orders
-    GROUP BY o_custkey
-)
-SELECT c.c_name, ctp.total_price
-FROM samples.tpch.customer c
-JOIN CustomerTotalPrice ctp
-ON c.c_custkey = ctp.o_custkey;
 
 -- COMMAND ----------
 

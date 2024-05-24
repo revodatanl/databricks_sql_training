@@ -162,11 +162,7 @@ QUALIFY row_num <= 5;
 
 -- COMMAND ----------
 
-SELECT o_custkey, COUNT(o_orderkey) AS order_count, SUM(o_totalprice) AS total_spent
-FROM samples.tpch.orders
-GROUP BY o_custkey
-HAVING COUNT(o_orderkey) > 5
-ORDER BY total_spent DESC;
+
 
 -- COMMAND ----------
 
@@ -180,11 +176,7 @@ ORDER BY total_spent DESC;
 
 -- COMMAND ----------
 
-SELECT l_partkey, AVG(l_quantity) AS avg_quantity
-FROM samples.tpch.lineitem
-GROUP BY l_partkey
-HAVING AVG(l_quantity) > 30
-ORDER BY avg_quantity DESC;
+
 
 -- COMMAND ----------
 
@@ -198,11 +190,7 @@ ORDER BY avg_quantity DESC;
 
 -- COMMAND ----------
 
-SELECT o_custkey, o_orderkey, o_totalprice, 
-  RANK() OVER (PARTITION BY o_custkey ORDER BY o_totalprice DESC) AS order_rank
-FROM samples.tpch.orders
-QUALIFY order_rank <= 3
-ORDER BY o_custkey, order_rank;
+
 
 -- COMMAND ----------
 

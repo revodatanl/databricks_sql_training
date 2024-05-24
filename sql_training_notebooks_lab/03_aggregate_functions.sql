@@ -270,15 +270,7 @@ WHERE c_acctbal > 1000;
 
 -- COMMAND ----------
 
-SELECT 
-    COUNT(c_custkey) AS customer_count,
-    COUNT(DISTINCT c_nationkey) AS distinct_nations,
-    SUM(c_acctbal) AS total_balance,
-    AVG(c_acctbal) AS average_balance,
-    MAX(c_acctbal) AS highest_balance,
-    MIN(c_acctbal) AS lowest_balance
-FROM 
-    samples.tpch.customer
+
 
 -- COMMAND ----------
 
@@ -297,14 +289,4 @@ FROM
 
 -- COMMAND ----------
 
-SELECT 
-    COUNT(c_custkey) AS customer_count,
-    COUNT(DISTINCT c_nationkey) AS distinct_nations,
-    SUM(c_acctbal) AS total_balance,
-    AVG(c_acctbal) AS average_balance,
-    MAX(c_acctbal) AS highest_balance,
-    MIN(c_acctbal) AS lowest_balance
-FROM 
-    samples.tpch.customer
-WHERE 
-    c_acctbal > 1000;
+

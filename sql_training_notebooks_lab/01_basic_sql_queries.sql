@@ -110,13 +110,11 @@ LIMIT 10;
 
 -- COMMAND ----------
 
-SELECT *
-FROM samples.tpch.customer
+
 
 -- COMMAND ----------
 
-SELECT l_quantity, l_extendedprice
-FROM samples.tpch.lineitem
+
 
 -- COMMAND ----------
 
@@ -152,21 +150,17 @@ WHERE c_nationkey = 1;
 
 -- COMMAND ----------
 
-SELECT * 
-FROM samples.tpch.orders
-WHERE o_orderdate = '1995-10-11'
+
 
 -- COMMAND ----------
 
-SELECT p_name, p_retailprice, p_size
-FROM samples.tpch.part
-WHERE p_size > 20
+
 
 -- COMMAND ----------
 
 -- MAGIC
 -- MAGIC %md
--- MAGIC ## 3. INSERT INTO
+-- MAGIC ## 4. INSERT INTO
 -- MAGIC
 -- MAGIC The INSERT INTO statement is used to add new records to a table.
 -- MAGIC
